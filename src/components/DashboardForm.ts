@@ -4,6 +4,7 @@ class DashaboardForm extends HTMLElement {
     this.attachShadow({ mode: 'open' })
     this.render()
   }
+
   static get styles() {
     return /* css */ `
       form {
@@ -20,11 +21,14 @@ class DashaboardForm extends HTMLElement {
   }
 
   changeAuthor(author: string) {
-    const h1 = this.shadowRoot!.querySelector('h1')
-    h1!.textContent = author
+    if (this.shadowRoot == null) throw new Error('Shadow root not found')
+    const h1 = this.shadowRoot.querySelector('h1') as HTMLHeadingElement
+    h1.textContent = author
   }
+
   render() {
-    this.shadowRoot!.innerHTML = /* html */ `
+    if (this.shadowRoot == null) throw new Error('Shadow root not found')
+    this.shadowRoot.innerHTML = /* html */ `
      <style>${DashaboardForm.styles}</style>
       <form id="dashboard-form">
          <h1>pepe</h1>

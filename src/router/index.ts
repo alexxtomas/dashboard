@@ -1,32 +1,34 @@
 import { $APP, ROUTES } from '@utils/constants.ts'
 
-export function router(app: HTMLElement) {
+export async function router(app: HTMLElement) {
   const route = ROUTES[window.location.pathname as keyof typeof ROUTES] as
     | (typeof ROUTES)[keyof typeof ROUTES]
     | undefined
 
   if (route == null) {
     history.pushState('', '', '/')
-    router(app)
+    await router(app)
     return
   }
 
   document.title = route.title
-  app.innerHTML = route.view()
+  app.innerHTML = await route.view()
 }
 
-window.addEventListener('click', (e) => {
+// Handle navigation
+window.addEventListener('click', async (e) => {
   const target = e.target as HTMLAnchorElement
   if (target.matches('[data-link]')) {
     e.preventDefault()
     history.pushState('', '', target.href)
-    router($APP)
+    await router($APP)
   }
 })
 
-window.addEventListener('popstate', () => {
-  router($APP)
+// Update router on back/forward navigation
+window.addEventListener('popstate', async () => {
+  await router($APP)
 })
-window.addEventListener('DOMContentLoaded', () => {
-  router($APP)
+window.addEventListener('DOMContentLoaded', async () => {
+  await router($APP)
 })

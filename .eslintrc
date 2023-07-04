@@ -4,13 +4,22 @@
     "es2021": true
   },
   "extends": ["standard-with-typescript", "eslint-config-prettier"],
-  "overrides": [],
+  "overrides": [
+    {
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
+      "extends": ["plugin:testing-library/dom"]
+    }
+  ],
   "parserOptions": {
     "project": "tsconfig.json",
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
   "plugins": ["@typescript-eslint"],
+
   "rules": {
     "space-before-function-paren": 0,
     "@typescript-eslint/explicit-function-return-type": 0,

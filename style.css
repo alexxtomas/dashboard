@@ -41,6 +41,7 @@
 }
 body {
   background-color: var(--secondary-color);
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;

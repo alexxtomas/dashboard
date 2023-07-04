@@ -1,3 +1,34 @@
+@font-face {
+  font-family: 'SF UI Text Regular';
+  font-style: normal;
+  font-weight: normal;
+  font-display: auto;
+  src: local('SF UI Text Regular'),
+    url('fonts/SFUIText-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF UI Text Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF UI Medium'), url('fonts/SFUIText-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF UI Semibold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF UI Text Semibold'),
+    url('fonts/SFUIText-Semibold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF UI Text Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF UI Text Bold'), url('fonts/SFUIText-Bold.woff') format('woff');
+}
+
 :root {
   --primary-color: #4f4c4a;
   --secondary-color: ##fffffe;
@@ -9,7 +40,7 @@
   box-sizing: border-box;
 }
 body {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
 }
 a {
   text-decoration: none;

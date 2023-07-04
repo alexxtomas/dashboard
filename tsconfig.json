@@ -26,7 +26,8 @@
       "@views/*": ["views/*"],
       "@validations/*": ["validations/*"],
       "@store/*": ["store/*"]
-    }
+    },
+    "types": ["vitest/globals"]
   },
-  "include": ["src", "main.ts", ".eslintrc"]
+  "include": ["src", "main.ts", ".eslintrc", "vite.config.ts", "__tests__"]
 }

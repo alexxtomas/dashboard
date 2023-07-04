@@ -1,1 +1,3 @@
-export type Validation = 'email' | 'password' | 'name' | 'avatar' | 'dni'
+import { type VALIDATIONS } from './index.ts'
+
+export type Validation = (typeof VALIDATIONS)[number]

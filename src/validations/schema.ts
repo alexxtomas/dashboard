@@ -1,7 +1,7 @@
 import * as yup from 'yup'
 import type { Validation } from './types.ts'
 
-const emailSchema = yup.string().email()
+const emailSchema = yup.string().email('Invalid email')
 
 const passwordSchema = yup
   .string()

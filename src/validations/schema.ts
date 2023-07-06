@@ -11,9 +11,7 @@ const passwordSchema = yup
     'password',
     'Password must contain at least one uppercase letter, one lowercase letter, one number and one special character',
     (value) => {
-      return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(
-        value as string
-      )
+      return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(value as string)
     }
   )
 
@@ -23,9 +21,9 @@ const avatarSchema = yup
   .mixed()
   .test('fileType', 'The file must be an image', (value) => {
     if (!(value instanceof File)) return false
-    return value.type === 'image/*'
+    return value.type.includes('image/')
   })
-  .test('fileSize', 'The image is too large', (value) => {
+  .test('fileSize', 'The image is too large. Max size is 2MB', (value) => {
     if (!(value instanceof File)) return false
     return value.size <= 2000000
   })

@@ -1,6 +1,5 @@
 import { schema } from './schema.ts'
 import type { Validation } from './types.ts'
-import { ValidationError } from 'yup'
 
 interface Params {
   validation: Validation
@@ -23,8 +22,7 @@ export async function validator({ validation, value }: Params) {
       message: ''
     }
   } catch (err) {
-    const message =
-      err instanceof ValidationError ? err.message : 'Invalid field'
+    const message = err instanceof Error ? err.message : 'Invalid field'
     return {
       isValid: false,
       message

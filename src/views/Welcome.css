@@ -1,0 +1,28 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 370px;
+}
+h2 {
+  font-family: 'SF UI Text Light';
+  font-weight: 200;
+  letter-spacing: 0.5px;
+  font-size: 32px;
+}
+
+p {
+  font-family: 'SF UI Text Medium';
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: #2b2f30;
+  margin: 0 auto;
+}
+
+.email-input-wraper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}

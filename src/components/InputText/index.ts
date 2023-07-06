@@ -18,6 +18,8 @@ export class InputText extends HTMLElement {
     return /* css */ `
     :host {
       width: 100%;
+      display: block;
+
     }
     .wraper {
       position: relative;
@@ -26,15 +28,15 @@ export class InputText extends HTMLElement {
 
     input {
       font-family: 'SF UI Text Regular';
-      line-height: 2em;
-      margin: 6px 0 0 0;
-      padding: 1px 2px 1px 8px;
-      width: 100%;
+      line-height: 22px;
+      width: 96.9%;
+      padding-left: 8px;
+      height: 50px;
       font-size: 16px;
       border: 1px solid #2b2f30;
       background-color: #fff;
       border-radius:6px;
-      font-weight: 500;
+      font-weight: 300;
       outline: none;
     }
 
@@ -47,8 +49,7 @@ export class InputText extends HTMLElement {
       left: 7px;
       color: #2b2f30;
       transition: 0.2s ease-in-out transform;
-      font-size: 12px;
-      font-weight: 600;
+      font-size: 13px;
       letter-spacing: 0.25px;
     }
 
@@ -63,7 +64,7 @@ export class InputText extends HTMLElement {
       visibility: visible;
       z-index: 1;
       opacity: 1;
-      transform: translateY(-12px);
+      transform: translateY(-20px);
       transition: 0.2s ease-in-out transform;
      }
 
